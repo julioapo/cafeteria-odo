@@ -21,7 +21,5 @@ class OrderController extends Controller
     public function generate(){        
         return view('order.generate');
     }
-
-
     
 }

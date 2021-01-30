@@ -113,7 +113,7 @@
                       </form>
                 </div>
                 <div class="card-footer">
-                    <button type="button" class="btn btn-success" id="btn_empty">Enviar compra</button>                    
+                    <a href="{{ route('sendorder.index') }}"><button type="button" class="btn btn-success" id="btn_empty">Enviar compra</button></a>
                 </div>
             </div>
         </div>

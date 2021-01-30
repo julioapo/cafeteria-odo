@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShoppingCartController;
+use App\Http\Controllers\SendOrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 /* Route::resource('preorder', PreOrderController::class)->except(['edit','destroy']); */
 
 Route::get('order', [OrderController::class, 'index'])->name('order.index');
+
+Route::get('sendorder', [SendOrderController::class, 'index'])->name('sendorder.index');
 
 /* Route::get('order/generate', [OrderController::class, 'generate'])->name('order.generate');
  */
