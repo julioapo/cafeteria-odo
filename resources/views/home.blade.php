@@ -23,7 +23,7 @@
     <!--End Preloader -->
     <!-- Navbar -->
     <nav class="navbar navbar-default bootsnav no-background navbar-fixed black">
-        <div class="container">  
+        <div class="container">            
             <div class="attr-nav">
                 <ul>                    
                     <li class="side-menu"><a href="#"><i class="fa fa-bars"></i></a></li>
@@ -34,6 +34,32 @@
             </div>
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">@include('order.state')</a>
+            </div>
+            @guest
+                @if (Route::has('login'))
+                    <div class="navbar-header">
+                        <a class="navbar-brand" style="color: #ffffff;font-weight:bold;font-size: 16px" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </div>
+                @endif                            
+                @if (Route::has('register'))
+                    <div class="navbar-header">                                    
+                        <a class="navbar-brand" style="color: #ffffff;font-weight:bold;font-size: 16px" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </div>
+                @endif
+            @else
+                <div class="navbar-header">                    
+                    <a class="navbar-brand" style="color: #ffffff;font-weight:bold;font-size: 16px" href="#">Hola!! {{ Auth::user()->name }}</a>
+                            <a class="navbar-brand" style="color: #ffffff;font-weight:bold;font-size: 16px" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">Puedes cerrar tu Session
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                </div>
+            @endguest
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ route('order.order') }}">@include('order.active')</a>
             </div>
             <!-- End Header Navigation -->
         </div>
@@ -50,6 +76,7 @@
                     <li><a href="#">Pedir Ahora</a></li>
                     <li><a href="#">Contactenos</a></li>
                     <li><a href="#">Administrar</a></li>
+                    <li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>                    
                 </ul>
             </div>
         </div>
@@ -64,7 +91,7 @@
                 <div class="col-md-8 col-md-offset-2">
                     <div class="banner">
                         <!--<h3>-llegaste a-</h3>-->
-                        <h1>CAFETERIAS UNIVERSIDAD DE LA REPUBLICA</h1>
+                        <h1>CAFETERIA UNIVERSIDAD DE LA REPUBLICA</h1>
 
                         <div class="info_btn_shadow">
                             <a href="{{ route('order.index') }}" class="info_btn">Haga su Pedido </a>

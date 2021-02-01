@@ -1,4 +1,12 @@
-@extends('layouts.app')
+@extends('layouts.tmpcustomer')
+
+@section('header_nav1')
+    @guest        
+        @if (Route::has('login'))                            
+            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>              
+        @endif    
+    @endguest    
+@endsection
 
 @section('content')
 <div class="container">
@@ -32,6 +40,34 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="cell" class="col-md-4 col-form-label text-md-right">{{ __('Teléfono Movil') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="cell" type="text" class="form-control @error('cell') is-invalid @enderror" name="cell" value="{{ old('cell') }}" required autocomplete="cell" autofocus>
+
+                                @error('cell')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Dirección') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
+
+                                @error('address')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

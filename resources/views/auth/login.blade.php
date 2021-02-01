@@ -1,8 +1,16 @@
-@extends('layouts.app')
+@extends('layouts.tmpcustomer')
 
-@section('content')
+@section('header_nav1')
+    @guest        
+        @if (Route::has('register'))                
+            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>                
+        @endif    
+    @endguest    
+@endsection
+
+@section('content')            
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center">        
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>

@@ -25,20 +25,14 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-//Route::get('/', HomeController::class)->name('home');
-
-/*Route::get('/', HomeController::class)->name('home');*/
-
-//Route::resource('products', ProductController::class);
-
-/* Route::resource('preorder', PreOrderController::class)->except(['edit','destroy']); */
-
 Route::get('order', [OrderController::class, 'index'])->name('order.index');
 
-Route::get('sendorder', [SendOrderController::class, 'index'])->name('sendorder.index');
+Route::post('order/process_order', [OrderController::class, 'process_order'])->name('order.process_order')->middleware('auth');
 
-/* Route::get('order/generate', [OrderController::class, 'generate'])->name('order.generate');
- */
+Route::get('order/generate', [OrderController::class, 'generate'])->name('order.generate');
+
+Route::get('order/order', [OrderController::class, 'order'])->name('order.order')->middleware('auth');
+
 /*
 * ACA CONTROLAMOS ACCIONES DEL CARRITO DE PEDIDO
 */
@@ -61,38 +55,6 @@ Route::get('customers/create', function () {
 Route::get('customers/{customer}', function ($customer) {    
     return "Bienvenido a la pagina del cliente: $customer";
 });
-
-/* Route::get('customers/{customer}/{type?}', function ($customer, $type = null) {
-
-    if($type){
-        return "Se visualizan los productos: $customer de la categoria $type";
-    }else{
-        return "Bienvenido a la pagina del cliente: $customer";
-    }
-    
-}); */
-
-// ESTAS LINEAS DE ABAJO SON PARA LLAMAR RUTAS DE ACCIONES EN UNA APLICACION PERO NO SON LAS OPTIMAS
-/* Route::get('products', [ProductController::class,'index'])->name('products.index');
-
-Route::get('products/create', [ProductController::class,'create'])->name('products.create');
-
-Route::post('products', [ProductController::class,'store'])->name('products.store');
-
-Route::get('products/{product}', [ProductController::class,'show'])->name('products.show');
-
-Route::get('products/{product}/edit', [ProductController::class,'edit'])->name('products.edit');
-
-Route::put('products/{product}', [ProductController::class,'update'])->name('products.update');
-
-Route::delete('products/{product}', [ProductController::class,'destroy'])->name('products.destroy'); */
-
-//LINEAS OPTIMAS PÀRA CREAR RUTAS DE ACCION EN UNA APLICACION
-
-/* ESTA LINEA ES PARA VER COMO PUEDO CAMBIAR LOS NOMBRES DE LAS URL Y LOS PARAMETROS
-DEBES VER EN "PARAMETERS" Y EN "NAMES" */
-
-//Route::resource('productos', ProductController::class)->parameters(['productos' => 'product'])->names('products');
 
 Route::get('products/showProOrd/{id}', [ProductController::class, 'showProOrd'])->name('products.showProOrd');
 

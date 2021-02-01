@@ -25,7 +25,7 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer(['order.order'],'App\Http\ViewComposers\OrderCartComposer');
+        View::composer(['order.active'],'App\Http\ViewComposers\OrderCartComposer');
 
         //esto deberia mostrar el estado del carrito
         View::composer('order.state', function($wiev){

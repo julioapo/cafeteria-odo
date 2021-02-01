@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="http://www.cafeteria-odo.local/vendor/overlayScrollbars/css/OverlayScrollbars.min.css">
     <link rel="stylesheet" href="http://www.cafeteria-odo.local/vendor/adminlte/dist/css/adminlte.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    @yield('css')
 </head>
 <body class="sidebar-mini">
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">            
@@ -45,7 +46,7 @@
     <script src="http://www.cafeteria-odo.local/vendor/jquery/jquery.min.js"></script>
     <script src="http://www.cafeteria-odo.local/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="http://www.cafeteria-odo.local/vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-    <script src="http://www.cafeteria-odo.local/vendor/adminlte/dist/js/adminlte.min.js"></script>
-    @yield('scripts')
+    <script src="http://www.cafeteria-odo.local/vendor/adminlte/dist/js/adminlte.min.js"></script>    
+    @yield('scripts')    
 </body>
 </html>

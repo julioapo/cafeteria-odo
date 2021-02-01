@@ -1,0 +1,1 @@
+<span id='spanItemsCar' class="badge badge-ligth">Ordenes Activas {{ $order_active }}</span>

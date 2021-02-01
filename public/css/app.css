@@ -3350,8 +3350,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
     nav.bootsnav.navbar-brand-top .navbar-header{
         display: block;
         width: 100%;
-        text-align: center;
-        color: white;     
+        text-align: center;           
     }
     
     nav.bootsnav.navbar-brand-top ul.nav > li.dropdown > ul.dropdown-menu{
@@ -3365,8 +3364,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
     nav.bootsnav.navbar-brand-top .navbar-header .navbar-brand{
         display: inline-block;
         float: none;
-        margin: 0;
-        color: white;
+        margin: 0;        
     }
     
     nav.bootsnav.navbar-brand-top .navbar-collapse{
@@ -3387,14 +3385,12 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         position: absolute;
         text-align: center;
         top: 0;
-        left: 0;
-        color: white;
+        left: 0;        
     }
     
     nav.bootsnav.brand-center .navbar-brand{
         display: inline-block;
-        float: none;
-        color: white;
+        float: none;        
     }
     
     nav.bootsnav.brand-center .navbar-collapse{
@@ -3982,8 +3978,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
 @media (max-width: 767px) {
     nav.navbar.bootsnav .navbar-header {
         padding-left: 15px;
-        padding-right: 15px;
-        color: white;
+        padding-right: 15px;        
     }
     
     nav.navbar.bootsnav .navbar-nav {
@@ -4017,8 +4012,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
     }
     
     nav.bootsnav.navbar-full .navbar-header{
-        padding-right: 0;
-        color: white;
+        padding-right: 0;        
     }
     
     nav.bootsnav.navbar-full .navbar-toggle {
@@ -4079,6 +4073,12 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
         padding-top: 30px;
         padding-bottom: 30px;
     }
+}
+.navbar-brand .logreg{
+    background-color: blue;
+    color: cornsilk;
+    font-size: 15px;
+    font-weight: bold;
 }
 /* ==============================================================
 

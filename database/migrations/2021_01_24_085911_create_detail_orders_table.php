@@ -14,6 +14,7 @@ class CreateDetailOrdersTable extends Migration
     public function up()
     {
         Schema::create('detail_orders', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('product_id')->nullable();
             $table->float('amount_product',8,2);
@@ -41,6 +42,6 @@ class CreateDetailOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detail_pre_orders');
+        Schema::dropIfExists('detail_orders');
     }
 }
